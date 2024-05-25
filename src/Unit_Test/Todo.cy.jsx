@@ -17,4 +17,25 @@ describe('<Todo />', () => {
         cy.mount(<Todo todo={todo} />)
         cy.get('[data-cy=todo-category]').should('have.text', todo.category)
     })
+
+    //New tests
+    it('should check if buttonComplete is visible', () => {
+        cy.mount(<Todo todo={todo} />)
+        cy.get('[data-cy=todo-buttonComplete]').should('be.visible')
+    })
+
+    it('should check if buttonX is visible', () => {
+        cy.mount(<Todo todo={todo} />)
+        cy.get('[data-cy=todo-buttonX]').should('be.visible')
+    })
+
+    it('should check if buttonComplete has text Completar', () => {
+        cy.mount(<Todo todo={todo} />)
+        cy.get('[data-cy=todo-buttonComplete]').should('have.text', "Completar")
+    })
+
+    it('should check if buttonX has text X', () => {
+        cy.mount(<Todo todo={todo} />)
+        cy.get('[data-cy=todo-buttonX]').should('have.text', "X")
+    })
 })

@@ -59,7 +59,7 @@ const TodoForm = ({ addTodo }) => {
             className='todo-form'
             data-cy="todo-form"
         >
-            <h2>Criar tarefa:</h2>
+            <h2 data-cy="h2-create-task">Criar tarefa:</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -76,14 +76,14 @@ const TodoForm = ({ addTodo }) => {
                     value={category}
                     data-cy="select-category"
                 >
-                    <option value="">Selecione uma categoria</option>
-                    <option value="Trabalho">Trabalho</option>
-                    <option value="Pessoal">Pessoal</option>
-                    <option value="Estudos">Estudos</option>
+                    <option value="" data-cy="todo-form-select-category">Selecione uma categoria</option>
+                    <option value="Trabalho" data-cy="todo-form-work" >Trabalho</option>
+                    <option value="Pessoal" data-cy="todo-form-personal">Pessoal</option>
+                    <option value="Estudos" data-cy="todo-form-studies">Estudos</option>
                 </select>
                 <div className='colors' data-cy="colors">
-                    <p className='colors_text'>Cor: </p>
-                    <div className='colors_options'>
+                    <p className='colors_text' data-cy="colors-title">Cor: </p>
+                    <div className='colors_options' data-cy="colors-options">
                         {
                             arrayColors.map((item, index) => {
                                 return  <button data-cy="color" className='color' key={index} style={{backgroundColor: `${item}`}} onClick={(e) => selectBackgroundColor(e, item)}></button>
